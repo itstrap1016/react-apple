@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
+import useScrollHeight from "../hooks/useScrollHeight";
 
 const ScrollSection = styled.div`
   padding-top: 50vh;
+  height: ${({ height }) => `${height}px`};
+  border: 3px solid red;
 `;
 const Text = styled.p`
   font-size: 1.2rem;
@@ -28,6 +31,8 @@ const StrongText = styled.strong`
 `;
 
 const ScrollSection01 = () => {
+  const type = "normal";
+
   return (
     <ScrollSection>
       <Text>

@@ -5,6 +5,10 @@ const LocalNav = styled.nav`
   height: 52px;
   border-bottom: 1px solid #ddd;
   padding: 0 1rem;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
 `;
 const LocalNavLinks = styled.div`
   display: flex;

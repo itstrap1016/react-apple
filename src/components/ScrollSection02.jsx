@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
+import { stickyElem } from "./CommonStyles";
+import useScrollHeight from "../hooks/useScrollHeight";
 
 const ScrollSection = styled.div`
   padding-top: 50vh;
+  height: ${({ height }) => `${height}px`};
+  border: 3px solid red;
 `;
 const MainMessage = styled.div`
   display: flex;
@@ -11,6 +15,7 @@ const MainMessage = styled.div`
   height: 3em;
   margin: 5px 0;
   font-size: 3.5rem;
+  ${stickyElem}
 
   @media (min-width: 1024px) {
     font-size: 6vw;
@@ -38,6 +43,7 @@ const SmallText = styled.small`
 const DescMessage = styled.div`
   font-weight: bold;
   width: 50%;
+  ${stickyElem}
 
   @media (min-width: 1024px) {
     width: 20%;
@@ -53,8 +59,11 @@ const Pin = styled.div`
 `;
 
 const ScrollSection02 = () => {
+  const type = "sticky";
+  const scrollHeight = useScrollHeight();
+
   return (
-    <ScrollSection>
+    <ScrollSection height={scrollHeight}>
       <MainMessage>
         <MainText>
           <SmallText>편안한 촉감</SmallText>

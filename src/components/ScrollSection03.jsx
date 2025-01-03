@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
+import useScrollHeight from "../hooks/useScrollHeight";
 
 const ScrollSection = styled.div`
   padding-top: 50vh;
+  height: ${({ height }) => `${height}px`};
+  border: 3px solid red;
 `;
 const MidMessage = styled.p`
   padding: 0 1rem;
@@ -32,8 +35,11 @@ const CanvasCaption = styled.p`
 `;
 
 const ScrollSection03 = () => {
+  const type = "sticky";
+  const scrollHeight = useScrollHeight();
+
   return (
-    <ScrollSection>
+    <ScrollSection height={scrollHeight}>
       <MidMessage>
         <StrongText>Retina 머그</StrongText>
         <br />

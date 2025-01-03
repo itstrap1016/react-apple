@@ -4,6 +4,10 @@ import styled from "styled-components";
 const GlobalNav = styled.nav`
   height: 44px;
   padding: 0 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 `;
 const GlobalNavLinks = styled.div`
   display: flex;
